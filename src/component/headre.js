@@ -1,8 +1,44 @@
 import React, { Component } from 'react';
 
+function haha(){
+  alert('hoho');
+}
+
+
+
 class Header extends Component {
 constructor(props){
 super(props);
+this.state={
+  statu:0
+}
+
+}
+renderBaner=()=>(
+ <div>
+  <h1>banner</h1>
+  </div>
+)
+renderMenu=()=>(
+  <div>
+
+  <h1>menu</h1>
+  </div>
+)
+
+menu(){
+  this.setState({statu:1});
+}
+
+displayCheck =()=>{
+  if(this.state.statu === 0){
+    return this.renderBaner();
+    
+  }
+  if(this.state.statu ===1){
+    return this.renderMenu();
+  }
+  
 }
     render() {
         return (
@@ -34,8 +70,10 @@ super(props);
               </form>
             </div>
           </nav>
+          
+          {this.displayCheck()}
+
         </div>
-        
         
           );
     }
