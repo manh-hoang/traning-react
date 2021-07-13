@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-
-function haha(){
-  alert('hoho');
-}
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  NavLink
+} from "react-router-dom";
 
 
 
@@ -11,24 +14,32 @@ constructor(props){
 super(props);
 this.state={
   statu:0
+
 }
 
+
+}
+menuBlock=()=>{
+  this.setState({statu:1});
+}
+banerBlock=()=>{
+  this.setState({statu:0});
 }
 renderBaner=()=>(
  <div>
+   <a onClick={this.menuBlock}>menu</a>
   <h1>banner</h1>
   </div>
 )
 renderMenu=()=>(
   <div>
-
+   <a onClick={this.banerBlock}>banner</a>
   <h1>menu</h1>
   </div>
 )
 
-menu(){
-  this.setState({statu:1});
-}
+
+
 
 displayCheck =()=>{
   if(this.state.statu === 0){
@@ -40,6 +51,7 @@ displayCheck =()=>{
   }
   
 }
+
     render() {
         return (
         
@@ -55,13 +67,14 @@ displayCheck =()=>{
             <div className="collapse navbar-collapse" id="navb">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
-                  <a className="nav-link" href="javascript:void(0)">Page1</a>
+                <NavLink className="nav-link " to="/home" activeStyle={{ fontWeight: "bold", color: "red" }}>Home</NavLink>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="javascript:void(0)">Page2</a>
+                <NavLink className="nav-link " to="/blog" activeStyle={{ fontWeight: "bold", color: "red" }}>Blog</NavLink>
+
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link " href="javascript:void(0)">Page3</a>
+                <NavLink className="nav-link " to="/detail" activeStyle={{ fontWeight: "bold", color: "red" }}>Detail</NavLink>
                 </li>
               </ul>
               <form className="form-inline my-2 my-lg-0">
@@ -72,6 +85,7 @@ displayCheck =()=>{
           </nav>
           
           {this.displayCheck()}
+
 
         </div>
         

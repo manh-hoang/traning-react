@@ -1,8 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  NavLink
+} from "react-router-dom";
 import Header from './component/headre';
 import Footer from './component/footer';
 import Baner from './component/baner';
+import DemoRouter from './router/demo';
+
 
 // create cpn 
 function One(){
@@ -16,7 +25,7 @@ function One(){
 
   )
 }
-function haha(){
+function Haha(){
   alert('haha');
 }
 // create cpn 2
@@ -53,21 +62,16 @@ function BlockSo(){
 
 function App() {
   return (
+    <Router>
     <div className="App">
       
         
     <Header/>
     <Baner/>
-        <One/>
-        <hr></hr>
-        <Two/>
-        <hr></hr>
-        <BlockSo/>
-        <hr></hr>
-        <Demoprops so="1"/>
-      
+        <DemoRouter/>
       <Footer/>
     </div>
+    </Router>
     
   );
 }

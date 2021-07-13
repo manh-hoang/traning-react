@@ -1,4 +1,11 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  NavLink
+} from "react-router-dom";
 
 class Footer extends Component {
     render() {
@@ -120,6 +127,7 @@ class Footer extends Component {
           <a className="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
         {/* Copyright */}
+
       </footer>
             </div>
         );
