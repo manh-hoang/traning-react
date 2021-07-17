@@ -10,7 +10,7 @@ class DemoRouter extends Component {
             <div>
             <Route path="/home" component={Home} />
             <Route path="/blog" component={Blog} />
-            <Route path="/detail" component={Detail} />
+            <Route path="/detail/:id" component={Detail} />
             </div>
         );
     }
